@@ -28,3 +28,14 @@ margin-top: 30px ;
 .item{
   width:30%;
 }
+
+/* home page styling*/
+.home{
+   
+}
+.home-card{
+  max-width: 500px;
+  height:max-content;
+  margin: 26px auto;
+
+}
