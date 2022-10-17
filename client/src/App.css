@@ -30,12 +30,17 @@ margin-top: 30px ;
 }
 
 /* home page styling*/
-.home{
-   
-}
+
 .home-card{
   max-width: 500px;
   height:max-content;
   margin: 26px auto;
 
+}
+
+
+#toast-container{
+  top:30px !important;
+  right:20px !important;
+  left:auto !important;
 }
