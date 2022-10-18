@@ -33,6 +33,8 @@ const PostData =()=>{
     M.toast({html: data.message, classes:"#43a047 green darken-1"})
     navigate("/signin");
   }
+  }).catch(err=>{
+    console.log(err) 
   })
 
 }
