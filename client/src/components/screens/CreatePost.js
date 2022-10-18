@@ -10,7 +10,7 @@ const CreatePost=()=> {
     data.append("file",image)
     data.append("upload_present"," insta_clone")
     data.append("cloud_name","dcyysbj41")
-    fetch("https://969598712174524:fZEabkQn6LVfGiY2fnZXCEOmnjY@dcyysbj41/images/upload",{
+    fetch("https://668969598712174524:fZEabkQn6LVfGiY2fnZXCEOmnjY@dcyysbj41/images/upload",{
        method:"post",
        body:data
     })
