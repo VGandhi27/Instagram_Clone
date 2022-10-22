@@ -30,6 +30,9 @@ const PostData =()=>{
    if(data.error){
     M.toast({html: data.error, classes:"#d32f2f red darken-2"})
     }else{
+
+      localStorage.setItem("jwt",data.token)
+      localStorage.setItem("user",JSON.stringify(data.user))
     M.toast({html: "Signed In success", classes:"#43a047 green darken-1"})
     navigate("/");
   }
