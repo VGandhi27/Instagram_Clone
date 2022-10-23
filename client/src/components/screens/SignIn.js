@@ -1,10 +1,12 @@
-import React,{useState} from 'react'
+import React,{useState,useContext} from 'react'
 import {Link } from 'react-router-dom'
 
 import M from 'materialize-css'
 import {useNavigate} from 'react-router-dom'
+import { UserContext } from '../../App'
 
 const SignIn=()=>  {
+  const {state,dispatch}=useContext(UserContext)
 const [password, setPassword] = useState("")
 const [email, setEmail] = useState("")
 let navigate =useNavigate();
@@ -33,7 +35,8 @@ const PostData =()=>{
 
       localStorage.setItem("jwt",data.token)
       localStorage.setItem("user",JSON.stringify(data.user))
-    M.toast({html: "Signed In success", classes:"#43a047 green darken-1"})
+      dispatch({type:"USER",payload:data.user})
+      M.toast({html: "Signed In success", classes:"#43a047 green darken-1"})
     navigate("/");
   }
   }).catch(err=>{
