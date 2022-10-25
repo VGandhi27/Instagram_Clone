@@ -1,5 +1,5 @@
 import React,{useContext} from 'react'
-import { Outlet, Link , useLocation} from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 import { UserContext} from '../App'
 const Navbar=()=> {
   const {state,dispatch}=useContext(UserContext)
@@ -8,6 +8,15 @@ const Navbar=()=> {
     return[
       <li><Link to="/profile">Profile</Link></li>,
       <li><Link to="/createpost">Create Post</Link></li>
+      // <li>
+      //    <button className="btn waves-effect waves-light #64b5f6 blue darken-1"
+      //   onClick={()=>{
+      //     localStorage.clear()
+      //     dispatch({type:"CLEAR"})
+      //   }}
+      //   >Signout
+      //   </button>
+      // </li>
 
     ]
     }else{
