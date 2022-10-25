@@ -1,8 +1,8 @@
-import React,{useState,useEffect}from 'react'
+import React,{useState,useCallback}from 'react'
 
 const Home=()=> {
    const [data,setData]=useState([])
-   useEffect=(()=>{
+   useCallback=(()=>{
     fetch('/allpost',{
       headers:{
         "Authorization":"Bearer "+localStorage.getItem("jwt")

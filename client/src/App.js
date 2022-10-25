@@ -1,7 +1,7 @@
-import React ,{useEffect,createContext,useReducer,useContext} from "react";
+import React ,{createContext,useReducer,useContext, useEffect} from "react";
 import "./App.css";
 import Navbar from "./components/Navbar";
-import { BrowserRouter, Route, Routes,Switch } from "react-router-dom";
+import { BrowserRouter, Route, Routes} from "react-router-dom";
 import Home from "./components/screens/Home";
 import SignIn from "./components/screens/SignIn";
 import SignUp from "./components/screens/SignUp";

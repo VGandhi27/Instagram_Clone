@@ -53,7 +53,7 @@ const PostData =()=>{
          value={email}
          onChange={(e)=>setEmail(e.target.value)}/>
 
-        <input type="text" placeholder="password"
+        <input type="password" placeholder="password"
          value={password}
          onChange={(e)=>setPassword(e.target.value)} />
         <button className="btn waves-effect waves-light #64b5f6 blue darken-1"

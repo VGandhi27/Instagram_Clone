@@ -20,6 +20,10 @@ margin-top: 30px ;
   border-bottom: 1px solid rgb(23, 60, 184) !important;
   box-shadow: 0 1px 0 0 rgb(23, 60, 184) !important;
 }
+.input-field input[type=password]:focus {
+  border-bottom: 1px solid rgb(23, 60, 184) !important;
+  box-shadow: 0 1px 0 0 rgb(23, 60, 184) !important;
+}
 .gallery{
   display: flex;
   flex-wrap: wrap;
