@@ -3,7 +3,7 @@ import { Outlet, Link,useNavigate } from "react-router-dom";
 import { UserContext} from '../App'
 const Navbar=()=> {
   const {state,dispatch}=useContext(UserContext)
-  let navigate=useNavigate()
+const navigate=useNavigate();
   const renderList=()=>{
     if(state){
     return[
@@ -16,12 +16,14 @@ const Navbar=()=> {
            dispatch({type:"CLEAR"})
            navigate('/signin')
          }}
-         >Signout
+         >Logout
          </button>
        </li>
 
     ]
-    }else{
+    }
+    else
+    {
  
       return[
         <li><Link to="/signin">SignIn</Link></li>,
