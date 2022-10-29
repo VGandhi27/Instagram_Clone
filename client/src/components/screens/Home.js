@@ -3,21 +3,22 @@ import {useState,useEffect}from 'react'
 
 const Home=()=> {
    const [data,setData]=useState([])
-   useEffect=(()=>{
+   useEffect(()=>{
     fetch('/allpost',{
       headers:{
         "Authorization":"Bearer "+localStorage.getItem("jwt")
       }
     }).then(res=>res.json())
     .then(result=>{
+      console.log(result)
       setData(result.posts)
-     },[])
-   })
+     })
+   },[])
 
   return (
     <div className='home'>
        {
-        data.map(item=>{
+       data.map(item=>{
           return(
             <div className="card home-card" key={item._id}>
             <h5>{item.postedBy.name}</h5>

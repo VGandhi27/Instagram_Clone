@@ -15,6 +15,7 @@ export const UserContext =createContext()
 const Routing=()=>{
   const navigate = useNavigate();
     const {state,dispatch}=useContext(UserContext)
+    // eslint-disable-next-line
  useEffect(()=>{
   const user =JSON.parse(localStorage.getItem("user")) 
  console.log(user)
@@ -25,6 +26,7 @@ const Routing=()=>{
       else{
         navigate("/signin")
       }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
  },[])
   
 }
