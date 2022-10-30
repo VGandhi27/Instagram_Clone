@@ -20,10 +20,11 @@ const Routing=()=>{
   const user =JSON.parse(localStorage.getItem("user")) 
  console.log(user)
   if(user){
-    dispatch({type:"user",payload:user})
+    dispatch({type:"USER",payload:user})
     navigate("/")
       }
       else{
+        if(!history.location.pathname.startsWith('/reset'))
         navigate("/signin")
       }
       // eslint-disable-next-line react-hooks/exhaustive-deps
