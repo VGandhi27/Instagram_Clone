@@ -1,17 +1,22 @@
-import React ,{useEffect}from 'react'
+import React,{useEffect,useState,useContext} from 'react'
+import {UserContext} from '../../App'
 
-export default function Profile() {
-  useEffect(()=>{
-    fetch('/mypost',{
-      headers:{
-        "Authorization":"Bearer"+localStorage.getItem("jwt")
-
-      }
-    }) .then(res=>res.json())
-    .then(result=>{
-      console.log(result)
-    })
-  },[])
+const Profile  = ()=>{
+    const [mypics,setPics] = useState([])
+    const {state,dispatch} = useContext(UserContext)
+    console.log(state)
+    const [image,setImage] = useState("")
+    useEffect(()=>{
+       fetch('/mypost',{
+           headers:{
+               "Authorization":"Bearer "+localStorage.getItem("jwt")
+           }
+       }).then(res=>res.json())
+       .then(result=>{
+           console.log(result)
+           setPics(result.mypost)
+       })
+    },[])
 
   return (
     <div style={{maxWidth:"550px", margin:"0px auto" }}>
@@ -27,7 +32,7 @@ export default function Profile() {
         src="https://images.unsplash.com/photo-1520302723644-46526f5a7c2a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=836&q=80" />
       </div>
       <div>
-        <h4>Vidushi Gandhi</h4>
+        <h4>{state?state.name:"loading"}</h4>
         <div style={{display:"flex", justifyContent:"space-between" ,width:"108%"}}>
           <h5>20 posts</h5>
           <h5>20 followers</h5>
@@ -37,13 +42,17 @@ export default function Profile() {
     </div>
     
     <div className='gallery'>
-    <img className='item' src="https://images.unsplash.com/photo-1520302723644-46526f5a7c2a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=836&q=80" />
-    <img className='item' src="https://images.unsplash.com/photo-1520302723644-46526f5a7c2a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=836&q=80" />
-    <img className='item' src="https://images.unsplash.com/photo-1520302723644-46526f5a7c2a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=836&q=80" />
-    <img className='item' src="https://images.unsplash.com/photo-1520302723644-46526f5a7c2a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=836&q=80" />
-    <img className='item' src="https://images.unsplash.com/photo-1536104968055-4d61aa56f46a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80" />
-    
+      {
+        mypics.map(item=>{
+          return(
+          <img key={ item._id}className='item' src={item.photo} alt={item.title} />
+)
+          
+        })
+      }
+   
     </div>
     </div>
   )
 }
+export default Profile

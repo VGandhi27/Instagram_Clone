@@ -38,7 +38,6 @@ const navigate=useNavigate();
     <div className="nav-wrapper white" >
       <Link to={state?"/":"signin"} className="brand-logo left">Instagram</Link>
       <ul id="nav-mobile" className="right">
-      <li><Link to="/profile">Profile</Link></li>,
 
        {renderList()}
       </ul>

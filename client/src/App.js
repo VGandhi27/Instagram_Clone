@@ -21,10 +21,9 @@ const Routing=()=>{
  console.log(user)
   if(user){
     dispatch({type:"USER",payload:user})
-    navigate("/")
       }
       else{
-        if(!history.location.pathname.startsWith('/reset'))
+        if(!navigate.location.pathname.startsWith('/reset'))
         navigate("/signin")
       }
       // eslint-disable-next-line react-hooks/exhaustive-deps
