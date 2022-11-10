@@ -7,6 +7,7 @@ import SignIn from "./components/screens/SignIn";
 import SignUp from "./components/screens/SignUp";
 import Profile from "./components/screens/Profile";
 import CreatePost from "./components/screens/CreatePost";
+import UserProfile from "./components/screens/UserProfile";
 import {useNavigate} from 'react-router-dom'
 import {reducer,initialState} from './reducers/userReducer'
 
@@ -43,8 +44,9 @@ function App() {
             <Route path="home" element={<Home  />} />
             <Route path="signin" element={<><SignIn   /></>} />
             <Route path="signup" element={<><SignUp /></>} />
-            <Route path="profile" element={<><Profile /></>} />
+            <Route exact path="profile" element={<><Profile /></>} />
             <Route path="createpost" element={<><CreatePost /></>} />
+            <Route path="profile/:userid" element={<><UserProfile /></>} />
 
           </Route>
         </Routes>

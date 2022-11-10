@@ -1,6 +1,6 @@
-const mongoose =require("mongoose")
-
-const userSchema=new mongoose.Schema({
+const mongoose = require('mongoose')
+const {ObjectId} = mongoose.Schema.Types
+const userSchema = new mongoose.Schema({
     name:{
         type:String,
         required:true
@@ -12,8 +12,15 @@ const userSchema=new mongoose.Schema({
     password:{
         type:String,
         required:true
-        
-    }
+    },
+    resetToken:String,
+    expireToken:Date,
+    pic:{
+     type:String,
+     default:"http://res.cloudinary.com/dcyysbj41/image/upload/v1666777119/n5tnxchnqaynj25wrb7n.jpg"
+    },
+    followers:[{type:ObjectId,ref:"User"}],
+    following:[{type:ObjectId,ref:"User"}]
 })
 
 mongoose.model("User",userSchema)
