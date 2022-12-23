@@ -11,7 +11,7 @@
 - [Contact](#contact)
 
 ## <p id="general_info">General Info</p>
-The main aim of the project is to develop a web-based application using MERN Stack ,which is works  .
+The main aim of the project is to develop a web-based application using MERN Stack ,which works exactly like Instagram and also in future we can add many more options which are not present in Instagram   .
 
 In this we are also creating post recommendation app and that will help the user according to there preferences.
 - In this user can create and delete there post
